@@ -1,0 +1,16 @@
+[colors]
+1=215;
+11=155;
+111=60;
+2=215;
+22=155;
+222=60;
+3=215;
+33=155;
+333=60;
+
+[script]
+name="Manlix Graphic Counter";
+prefix="manlix_graphic_counter_";
+russian="Графический счётчик";
+version="2.0";

@@ -1,0 +1,97 @@
+<script language="javascript" type="text/javascript">
+<!--
+var ie=document.all?1:0;
+var ns=document.getElementById&&!document.all?1:0;
+
+function SmilesTable()
+{
+	if(ie)
+	{
+		if(document.all.SmilesTr.style.display=="none")
+		{
+		document.all.SmilesText.innerText="скрыть смайлики";
+		document.all.SmilesTr.style.display='';
+		}
+
+		else
+		{
+		document.all.SmilesText.innerText="показать смайлики";
+		document.all.SmilesTr.style.display='none';
+		}
+	}
+
+	else if(ns)
+	{
+
+		if(document.getElementById("SmilesTr").style.display=="none")
+		{
+		document.getElementById("SmilesText").innerHTML="скрыть смайлики";
+		document.getElementById("SmilesTr").style.display='';
+		}
+
+		else
+		{
+		document.getElementById("SmilesText").innerHTML="показать смайлики";
+		document.getElementById("SmilesTr").style.display='none';
+		}
+	}
+
+	else
+	alert("Ваш браузер не поддерживается!");
+}
+
+function InsertSmile(SmileId)
+{
+	if(ie)
+	{
+	document.all.message.focus();
+	document.all.message.value+=" :"+SmileId+": ";
+	}
+
+
+	else if(ns)
+	{
+	document.forms['guestbook'].elements['message'].focus();
+	document.forms['guestbook'].elements['message'].value+=" :"+SmileId+": ";
+	}
+
+	else
+	alert("Ваш браузер не поддерживается!");
+}
+
+function InsertName(NameId)
+{
+	if(ie)
+	{
+	document.all.message.focus();
+	document.all.message.value+=" "+NameId+", ";
+	}
+
+
+	else if(ns)
+	{
+	document.forms['guestbook'].elements['message'].focus();
+	document.forms['guestbook'].elements['message'].value+=" "+NameId+", ";
+	}
+
+	else
+	alert("Ваш браузер не поддерживается!");
+}
+
+// -->
+</script>
+
+<table align="center" bgcolor="#f4f8ff">
+если ошибка определена <tr><td align="center" colspan=2><font color="#0080ff"><b>@error@</b></font></td></tr>
+<form method=post name=guestbook>
+<tr><td colspan="2" align="center"><center><font color="#00458a">Новое сообщение</font></center><br></td></tr>
+<tr><td align="right"><font color="#00458a">Ваше имя: </font></td><td><input size="47" type=Text name=name value="@cookie_name@"></td></tr>
+<tr><td align="right"><font color="#00458a">E-mail: </font></td><td><input size="47" type=Text name=mail value="@cookie_mail@"></td></tr>
+<tr><td align="right"><font color="#00458a">Сайт: </font></td><td><input size="47" type=Text name=homepage value="@cookie_homepage@"></td></tr>
+<tr><td align="right"><font color="#00458a">ICQ: </font></td><td><input size="47" type=Text name=icq value="@cookie_icq@"></td></tr>
+<tr><td align="right" valign="top"><font color="#00458a">Сообщение: </font></td><td><textarea name="message" rows="5" cols="36">@cookie_message@</textarea></td></tr>
+<tr><td align="center" colspan="2"><input type=submit value="Добавить сообщение"></td></tr>
+<tr><td align=center colspan="2"><font color=#00458A style="cursor: hand; text-decoration: underline" onclick=SmilesTable() id=SmilesText>показать смайлики</font></td></tr>
+<tr style="display: none" id=SmilesTr><td align=center colspan="2"><font face=verdana size=1 color=#de0000>@smiles@</font></td></tr>
+</table>
+<hr size=2 color="#0080ff">

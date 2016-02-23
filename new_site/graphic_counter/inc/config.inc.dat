@@ -1,0 +1,16 @@
+[colors]
+1=0
+11=128
+111=255
+2=0
+22=128
+222=255
+3=0
+33=128
+333=255
+
+[script]
+name="Manlix Graphic Counter";
+prefix="manlix_graphic_counter_";
+russian="Графический счётчик";
+version="2.0";
